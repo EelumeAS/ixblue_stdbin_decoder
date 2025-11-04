@@ -8,7 +8,7 @@ if(NOT CMAKE_MATCH_COUNT EQUAL 1)
 endif()
 set(PACKAGE_VERSION ${CMAKE_MATCH_1})
 
-project(ixblue_stdbin_decoder
+project(ixblue-stdbin-decoder
   VERSION ${PACKAGE_VERSION}
   LANGUAGES CXX
 )
@@ -114,7 +114,7 @@ endif()
 ## Mark executables and/or libraries for installation
 install(
   TARGETS ${PROJECT_NAME}
-  EXPORT ixblue_stdbin_decoder-targets
+  EXPORT ixblue-stdbin-decoder-targets
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
@@ -129,30 +129,30 @@ install(
 # Install catkin package.xml
 install(FILES package.xml DESTINATION share/${PROJECT_NAME})
 
-set(INSTALL_CONFIGDIR lib/cmake/ixblue_stdbin_decoder)
+set(INSTALL_CONFIGDIR lib/cmake/ixblue-stdbin-decoder)
 
-install(EXPORT ixblue_stdbin_decoder-targets
+install(EXPORT ixblue-stdbin-decoder-targets
   FILE ixblue_stdbin_decoder-targets.cmake
-  NAMESPACE ixblue_stdbin_decoder::
+  NAMESPACE ixblue-stdbin-decoder::
   DESTINATION ${INSTALL_CONFIGDIR}
 )
 
 include(CMakePackageConfigHelpers)
 configure_package_config_file(${CMAKE_CURRENT_LIST_DIR}/cmake/ixblue_stdbin_decoder-config.cmake.in
-  ${CMAKE_CURRENT_BINARY_DIR}/ixblue_stdbin_decoder-config.cmake
+  ${CMAKE_CURRENT_BINARY_DIR}/ixblue-stdbin-decoder-config.cmake
   INSTALL_DESTINATION ${INSTALL_CONFIGDIR}
   PATH_VARS CMAKE_INSTALL_INCLUDEDIR
 )
 
-write_basic_package_version_file(ixblue_stdbin_decoder-version.cmake
+write_basic_package_version_file(ixblue-stdbin-decoder-version.cmake
   VERSION ${PROJECT_VERSION}
   COMPATIBILITY SameMajorVersion
 )
 
-#configure_file(cmake/ixblue_stdbin_decoder-config.cmake.in ixblue_stdbin_decoder-config.cmake @ONLY)
+#configure_file(cmake/ixblue-stdbin-decoder-config.cmake.in ixblue-stdbin-decoder-config.cmake @ONLY)
 install(FILES
-  ${CMAKE_CURRENT_BINARY_DIR}/ixblue_stdbin_decoder-config.cmake
-  ${CMAKE_CURRENT_BINARY_DIR}/ixblue_stdbin_decoder-version.cmake
+  ${CMAKE_CURRENT_BINARY_DIR}/ixblue-stdbin-decoder-config.cmake
+  ${CMAKE_CURRENT_BINARY_DIR}/ixblue-stdbin-decoder-version.cmake
   DESTINATION ${INSTALL_CONFIGDIR}
 )
 
