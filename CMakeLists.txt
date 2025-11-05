@@ -1,5 +1,11 @@
 cmake_minimum_required(VERSION 3.1)
 
+# Comment this in to build with Eelume vcpkg toolchain
+# if(NOT DEFINED VCPKG_TARGET_TRIPLET)
+#     set(VCPKG_TARGET_TRIPLET "x64-windows-semistatic" CACHE STRING "Vcpkg target triplet")
+# endif()
+# set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/../controlsoftware_vcpkg_x64-windows/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
+
 # Read version from package.xml file
 file(READ "${CMAKE_CURRENT_LIST_DIR}/package.xml" file_contents)
 string(REGEX MATCH "<version>([0-9]+.[0-9]+.[0-9]+)<\/version>" _ "${file_contents}")
