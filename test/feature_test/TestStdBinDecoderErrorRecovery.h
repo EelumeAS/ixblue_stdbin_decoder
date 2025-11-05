@@ -43,7 +43,7 @@ public:
     /**
      * @brief used to assert if is error is thrown
      */
-    void testIsErrorIsThrown(ssize_t cleaned_buffer_size){
+    void testIsErrorIsThrown(size_t cleaned_buffer_size){
         ASSERT_THROW(parseNextFrame(),std::runtime_error) << "Exception must be thrown in miss formatted data frame.";
         EXPECT_EQ(this->internalBuffer.size(),cleaned_buffer_size) << "Buffer must be cleaned.";
     }

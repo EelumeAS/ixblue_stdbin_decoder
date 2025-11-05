@@ -19,7 +19,7 @@ TEST_F(TestStdBinDecoderErrorRecovery, RecoveryFromBadCheckSum){
 TEST_F(TestStdBinDecoderErrorRecovery, RecoveryFromBadNavProtocolVersion){
     // add bad frame to buffer
     this->addNewDataFrame(BAD_NAV_PROTOCOL_VERSION);
-    ssize_t cleaned_buffer_size = BAD_NAV_PROTOCOL_VERSION.size() - 1;
+    size_t cleaned_buffer_size = BAD_NAV_PROTOCOL_VERSION.size() - 1;
     this->testIsErrorIsThrown(cleaned_buffer_size);
 
     this->testFramesErrorRecovery();
@@ -28,7 +28,7 @@ TEST_F(TestStdBinDecoderErrorRecovery, RecoveryFromBadNavProtocolVersion){
 TEST_F(TestStdBinDecoderErrorRecovery, RecoveryFromBadAnswerProtocolVersion){
     // add bad frame to buffer
     this->addNewDataFrame(BAD_ANSWER_PROTOCOL_VERSION);
-    ssize_t cleaned_buffer_size = BAD_ANSWER_PROTOCOL_VERSION.size() - 1;
+    size_t cleaned_buffer_size = BAD_ANSWER_PROTOCOL_VERSION.size() - 1;
     this->testIsErrorIsThrown(cleaned_buffer_size);
 
     this->testFramesErrorRecovery();
